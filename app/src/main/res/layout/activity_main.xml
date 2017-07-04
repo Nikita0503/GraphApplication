@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nik.graphapplication.MainActivity"
+
+    >
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonAddVertex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="59dp"
+        android:layout_below="@+id/editTextValue"
+        android:layout_alignLeft="@+id/textViewVertices"
+        android:layout_alignStart="@+id/textViewVertices" />
+
+    <TextView
+        android:id="@+id/textViewVertices"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="@string/textView_empty"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="78dp"
+        android:layout_below="@+id/buttonAddVertex"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/editTextValue"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/editText_vertex"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/textViewHint1"
+        android:layout_alignLeft="@+id/buttonAddVertex"
+        android:layout_alignStart="@+id/buttonAddVertex"
+        android:layout_alignRight="@+id/textViewHint2"
+        android:layout_alignEnd="@+id/textViewHint2" />
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonAddEdge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add"
+        android:layout_below="@+id/editTextValueEdge"
+        android:layout_alignLeft="@+id/editTextValueEdge"
+        android:layout_alignStart="@+id/editTextValueEdge" />
+
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonShowGraph"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_show_graph"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/editTextValueEdge"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/editText_value_edge"
+        android:inputType="number"
+        android:layout_below="@+id/textViewHint2"
+        android:layout_alignLeft="@+id/textViewHint2"
+        android:layout_alignStart="@+id/textViewHint2"
+        android:layout_marginTop="12dp"
+        android:layout_alignRight="@+id/textViewHint2"
+        android:layout_alignEnd="@+id/textViewHint2" />
+
+    <TextView
+        android:textSize="16dp"
+        android:id="@+id/textViewHint1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewHintVertex"
+        android:layout_marginTop="21dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/editTextValue"
+        android:layout_alignStart="@+id/editTextValue" />
+
+    <TextView
+        android:textSize="16dp"
+        android:id="@+id/textViewHint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewHintEdge"
+        android:layout_below="@+id/textViewVertices"
+        android:layout_alignLeft="@+id/textViewVertices"
+        android:layout_alignStart="@+id/textViewVertices"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonShowMatrix"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewEdges"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textViewEdges"
+        android:text="@string/buttonShowMatrix" />
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonDeleteVertex"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonDeleteVertex"
+        android:layout_below="@+id/editTextValue"
+        android:layout_toLeftOf="@+id/buttonShowGraph"
+        android:layout_toStartOf="@+id/buttonShowGraph"
+        android:layout_marginRight="37dp"
+        android:layout_marginEnd="37dp" />
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonDeleteEdge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonDeleteEdge"
+        android:layout_below="@+id/editTextValueEdge"
+        android:layout_alignLeft="@+id/buttonDeleteVertex"
+        android:layout_alignStart="@+id/buttonDeleteVertex"
+        android:layout_toLeftOf="@+id/buttonShowGraph"
+        android:layout_toStartOf="@+id/buttonShowGraph"
+        android:layout_marginRight="35dp"
+        android:layout_marginEnd="35dp" />
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonShortestPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttonDeleteEdge"
+        android:layout_alignLeft="@+id/buttonAddEdge"
+        android:layout_alignRight="@+id/buttonDeleteEdge"
+        android:layout_alignStart="@+id/buttonAddEdge"
+        android:layout_below="@+id/buttonAddEdge"
+        android:layout_marginTop="28dp"
+        android:text="@string/buttonShortestPass" />
+
+</RelativeLayout>

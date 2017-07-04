@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nik.graphapplication.MainActivity"
+
+    >
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonAddVertex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="59dp"
+        android:layout_below="@+id/editTextValue"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textViewVertices"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="@string/textView_empty"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="78dp"
+        android:layout_below="@+id/buttonAddVertex"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/editTextValue"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/editText_vertex"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_below="@+id/textViewHint1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/buttonDeleteVertex"
+        android:layout_toStartOf="@+id/buttonDeleteVertex" />
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonAddEdge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add"
+        android:layout_below="@+id/editTextValueEdge"
+        android:layout_alignLeft="@+id/editTextValueEdge"
+        android:layout_alignStart="@+id/editTextValueEdge" />
+
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonShowGraph"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_show_graph"
+        android:layout_alignTop="@+id/editTextValueEdge"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="21dp"
+        android:layout_marginEnd="21dp" />
+
+    <EditText
+        android:id="@+id/editTextValueEdge"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/editText_value_edge"
+        android:inputType="number"
+        android:layout_below="@+id/textViewHint2"
+        android:layout_alignLeft="@+id/textViewHint2"
+        android:layout_alignStart="@+id/textViewHint2"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/buttonDeleteEdge"
+        android:layout_toStartOf="@+id/buttonDeleteEdge" />
+
+    <TextView
+        android:textSize="16dp"
+        android:id="@+id/textViewHint1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewHintVertex"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:textSize="16dp"
+        android:id="@+id/textViewHint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewHintEdge"
+        android:layout_below="@+id/textViewVertices"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonShowMatrix"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonShowMatrix"
+        android:layout_above="@+id/editTextValueEdge"
+        android:layout_alignLeft="@+id/buttonShowGraph"
+        android:layout_alignStart="@+id/buttonShowGraph" />
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonDeleteVertex"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonDeleteVertex"
+        android:layout_below="@+id/editTextValue"
+        android:layout_toRightOf="@+id/textViewHint1"
+        android:layout_alignRight="@+id/buttonDeleteEdge"
+        android:layout_alignEnd="@+id/buttonDeleteEdge" />
+
+    <Button
+        android:background="@color/buttonColor"
+        android:id="@+id/buttonDeleteEdge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonDeleteEdge"
+        android:layout_below="@+id/editTextValueEdge"
+        android:layout_toRightOf="@+id/textViewHint1"
+        android:layout_toEndOf="@+id/textViewHint1" />
+
+    <Button
+        android:id="@+id/buttonShortestPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonShortestPass"
+        android:background="@color/buttonColor"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/buttonShowGraph"
+        android:layout_alignRight="@+id/buttonShowGraph"
+        android:layout_alignEnd="@+id/buttonShowGraph"
+        android:layout_alignLeft="@+id/buttonShowGraph"
+        android:layout_alignStart="@+id/buttonShowGraph" />
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">GraphApplication</string>
+    <string name="button_add">Add</string>
+    <string name="editText_vertex">value</string>
+    <string name="textView_empty"></string>
+    <string name="editText_edge1">vertex 1</string>
+    <string name="editText_edge2">vertex 2</string>
+    <string name="button_show_graph">show graph</string>
+    <string name="editText_value_edge">weight</string>
+    <string name="textViewHintVertex">Enter new vertex or delete: </string>
+    <string name="textViewHintEdge">Enter new edge or delete: </string>
+    <string name="buttonShowMatrix">show matrix</string>
+    <string name="buttonDeleteVertex">delete</string>
+    <string name="buttonDeleteEdge">delete</string>
+    <string name="buttonShortestPass">shortest pass</string>
+
+</resources>
