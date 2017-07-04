@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static ArrayList<Vertex> list_vertices = new ArrayList<Vertex>();
     public static ArrayList<Edge> list_edges = new ArrayList<Edge>();
     public static ArrayList<Edge> way_list = new ArrayList<Edge>();
@@ -69,8 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch (view.getId())
-        {
+        switch (view.getId()) {
             case R.id.buttonAddVertex:
                 if(!editTextValueVertex.getText().toString().equals("")) {
                     try {
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         if (check_repeat) {
                             Toast toast = Toast.makeText(MainActivity.this, "This vertex is not unique", Toast.LENGTH_LONG);
                             toast.show();
-                        } else {
+                        }else {
                             list_vertices.add(new Vertex(new Point(random_x, random_y), value));
                             editTextValueVertex.setText("");
                             updateTextViewVertecies();
@@ -93,8 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         c.printStackTrace();
                     }
                 }
-                else
-                {
+                else {
                     Toast toast = Toast.makeText(MainActivity.this, "Enter the value, please", Toast.LENGTH_LONG);
                     toast.show();
                 }
@@ -119,8 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         c.printStackTrace();
                     }
                 }
-                else
-                {
+                else {
                     Toast toast = Toast.makeText(MainActivity.this, "Enter the weight, please", Toast.LENGTH_LONG);
                     toast.show();
                 }
@@ -157,8 +154,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     allow_add_edge_second = false;
                     startActivity(intent3);
                 }
-                else
-                {
+                else {
                     Toast toast = Toast.makeText(MainActivity.this, "List of vertecies is empty", Toast.LENGTH_LONG);
                     toast.show();
                 }
@@ -179,8 +175,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     allow_add_edge_second = false;
                     startActivity(intent4);
                 }
-                else
-                {
+                else {
                     Toast toast = Toast.makeText(MainActivity.this, "List of edges is empty", Toast.LENGTH_LONG);
                     toast.show();
                 }
@@ -210,8 +205,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         c.printStackTrace();
                     }
                 }
-                else
-                {
+                else {
                     Toast toast = Toast.makeText(MainActivity.this, "Not enough data", Toast.LENGTH_LONG);
                     toast.show();
                 }
@@ -219,11 +213,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public static void updateTextViewVertecies()
-    {
+    public static void updateTextViewVertecies() {
         textViewVertices.setText("");
-        for(int i = 0; i < list_vertices.size(); i++)
-        {
+        for(int i = 0; i < list_vertices.size(); i++) {
             textViewVertices.setText(String.valueOf(textViewVertices.getText().toString()+" "+list_vertices.get(i).value));
         }
     }

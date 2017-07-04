@@ -10,8 +10,7 @@ public class Vertex {
     Point point;
     int value;
     public int number;
-    public Vertex(Point point, int value)
-    {
+    public Vertex(Point point, int value) {
         this.point = point;
         this.value = value;
     }

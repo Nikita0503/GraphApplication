@@ -55,10 +55,8 @@ public class Solution {
     private void readData() throws IOException {
         n = MainActivity.list_vertices.size();
         m = MainActivity.list_edges.size();
-        for(int i = 0; i < MainActivity.list_vertices.size(); i++)
-        {
-            if(MainActivity.list_vertices.get(i).value == MainActivity.vertex1)
-            {
+        for(int i = 0; i < MainActivity.list_vertices.size(); i++) {
+            if(MainActivity.list_vertices.get(i).value == MainActivity.vertex1) {
                 MainActivity.way_list_values.add(MainActivity.list_vertices.get(i));
                 start = MainActivity.list_vertices.get(i).number - 1;
             }
@@ -76,18 +74,14 @@ public class Solution {
 
         for (int i = 0; i < m; ++i) {
             int u = 0;
-            for(int j = 0; j < MainActivity.list_vertices.size(); j++)
-            {
-                if(MainActivity.list_edges.get(i).vertex1.value == MainActivity.list_vertices.get(j).value)
-                {
+            for(int j = 0; j < MainActivity.list_vertices.size(); j++) {
+                if(MainActivity.list_edges.get(i).vertex1.value == MainActivity.list_vertices.get(j).value) {
                     u = MainActivity.list_vertices.get(j).number;
                 }
             }
             int v = 0;
-            for(int j = 0; j < MainActivity.list_vertices.size(); j++)
-            {
-                if(MainActivity.list_edges.get(i).vertex2.value == MainActivity.list_vertices.get(j).value)
-                {
+            for(int j = 0; j < MainActivity.list_vertices.size(); j++) {
+                if(MainActivity.list_edges.get(i).vertex2.value == MainActivity.list_vertices.get(j).value) {
                     v = MainActivity.list_vertices.get(j).number;
                 }
             }
@@ -108,29 +102,23 @@ public class Solution {
 
     void printWay(int v) {
         if (v == -1) {
-
             return;
         }
         printWay(pred[v]);
-        for(int i = 0; i < MainActivity.list_vertices.size(); i++)
-        {
-            if(MainActivity.list_vertices.get(i).number == v + 1)
-            {
+        for(int i = 0; i < MainActivity.list_vertices.size(); i++) {
+            if(MainActivity.list_vertices.get(i).number == v + 1) {
                 MainActivity.way_list_values.add(MainActivity.list_vertices.get(i));
                 Log.d("GRAPH", MainActivity.list_vertices.get(i).value + " " );
             }
         }
     }
     private void printData() throws IOException {
-        for(int i = 0; i < MainActivity.list_vertices.size(); i++)
-        {
-            if(MainActivity.vertex2 == MainActivity.list_vertices.get(i).value)
-            {
+        for(int i = 0; i < MainActivity.list_vertices.size(); i++) {
+            if(MainActivity.vertex2 == MainActivity.list_vertices.get(i).value) {
                 printWay(MainActivity.list_vertices.get(i).number-1);
             }
         }
-        for(int i = 0; i < MainActivity.way_list_values.size()-1; i++)
-        {
+        for(int i = 0; i < MainActivity.way_list_values.size()-1; i++) {
             MainActivity.way_list.add(new Edge(MainActivity.way_list_values.get(i), MainActivity.way_list_values.get(i+1), 0));
         }
         MainActivity.print_way = true;
