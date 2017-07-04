@@ -7,8 +7,7 @@ package com.example.nik.graphapplication;
 public class Edge {
     public Vertex vertex1, vertex2;
     public int weight;
-    public Edge(Vertex vertex1, Vertex vertex2, int weight)
-    {
+    public Edge(Vertex vertex1, Vertex vertex2, int weight) {
         this.vertex1 = vertex1;
         this.vertex2 = vertex2;
         this.weight = weight;
