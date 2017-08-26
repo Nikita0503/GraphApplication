@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Solution {
+public class Solution{
     private static int INF = Integer.MAX_VALUE / 2;
     private int n;
     private int m;

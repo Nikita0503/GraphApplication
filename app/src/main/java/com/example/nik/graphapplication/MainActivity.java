@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-    public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private boolean allowDeleteVertex,
             clickWay1,
             clickWay2;
