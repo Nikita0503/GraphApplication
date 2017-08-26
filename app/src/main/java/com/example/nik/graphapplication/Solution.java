@@ -18,12 +18,19 @@ public class Solution {
     private static int INF = Integer.MAX_VALUE / 2;
     private int n;
     private int m;
+    private int vertex1, vertex2;
     private ArrayList<Integer> adj[];
     private ArrayList<Integer> weight[];
     private boolean used[];
     private int dist[];
     private int pred[];
     int start;
+
+    public Solution(int vertex1, int vertex2)
+    {
+        this.vertex1 = vertex1;
+        this.vertex2 = vertex2;
+    }
 
     private void dejkstra(int s) {
         dist[s] = 0;
@@ -53,12 +60,12 @@ public class Solution {
     }
 
     private void readData() throws IOException {
-        n = MainActivity.list_vertices.size();
-        m = MainActivity.list_edges.size();
-        for(int i = 0; i < MainActivity.list_vertices.size(); i++) {
-            if(MainActivity.list_vertices.get(i).value == MainActivity.vertex1) {
-                MainActivity.way_list_values.add(MainActivity.list_vertices.get(i));
-                start = MainActivity.list_vertices.get(i).number - 1;
+        n = MainActivity.vertices.size();
+        m = MainActivity.edges.size();
+        for(int i = 0; i < MainActivity.vertices.size(); i++) {
+            if(MainActivity.vertices.get(i).value == vertex1) {
+                MainActivity.wayValues.add(MainActivity.vertices.get(i));
+                start = MainActivity.vertices.get(i).number - 1;
             }
         }
 
@@ -74,18 +81,18 @@ public class Solution {
 
         for (int i = 0; i < m; ++i) {
             int u = 0;
-            for(int j = 0; j < MainActivity.list_vertices.size(); j++) {
-                if(MainActivity.list_edges.get(i).vertex1.value == MainActivity.list_vertices.get(j).value) {
-                    u = MainActivity.list_vertices.get(j).number;
+            for(int j = 0; j < MainActivity.vertices.size(); j++) {
+                if(MainActivity.edges.get(i).vertex1.value == MainActivity.vertices.get(j).value) {
+                    u = MainActivity.vertices.get(j).number;
                 }
             }
             int v = 0;
-            for(int j = 0; j < MainActivity.list_vertices.size(); j++) {
-                if(MainActivity.list_edges.get(i).vertex2.value == MainActivity.list_vertices.get(j).value) {
-                    v = MainActivity.list_vertices.get(j).number;
+            for(int j = 0; j < MainActivity.vertices.size(); j++) {
+                if(MainActivity.edges.get(i).vertex2.value == MainActivity.vertices.get(j).value) {
+                    v = MainActivity.vertices.get(j).number;
                 }
             }
-            int w = MainActivity.list_edges.get(i).weight;
+            int w = MainActivity.edges.get(i).weight;
             u--;
             v--;
             adj[u].add(v);
@@ -105,23 +112,23 @@ public class Solution {
             return;
         }
         printWay(pred[v]);
-        for(int i = 0; i < MainActivity.list_vertices.size(); i++) {
-            if(MainActivity.list_vertices.get(i).number == v + 1) {
-                MainActivity.way_list_values.add(MainActivity.list_vertices.get(i));
-                Log.d("GRAPH", MainActivity.list_vertices.get(i).value + " " );
+        for(int i = 0; i < MainActivity.vertices.size(); i++) {
+            if(MainActivity.vertices.get(i).number == v + 1) {
+                MainActivity.wayValues.add(MainActivity.vertices.get(i));
+                Log.d("GRAPH", MainActivity.vertices.get(i).value + " " );
             }
         }
     }
     private void printData() throws IOException {
-        for(int i = 0; i < MainActivity.list_vertices.size(); i++) {
-            if(MainActivity.vertex2 == MainActivity.list_vertices.get(i).value) {
-                printWay(MainActivity.list_vertices.get(i).number-1);
+        for(int i = 0; i < MainActivity.vertices.size(); i++) {
+            if(vertex2 == MainActivity.vertices.get(i).value) {
+                printWay(MainActivity.vertices.get(i).number-1);
             }
         }
-        for(int i = 0; i < MainActivity.way_list_values.size()-1; i++) {
-            MainActivity.way_list.add(new Edge(MainActivity.way_list_values.get(i), MainActivity.way_list_values.get(i+1), 0));
+        for(int i = 0; i < MainActivity.wayValues.size()-1; i++) {
+            MainActivity.way.add(new Edge(MainActivity.wayValues.get(i), MainActivity.wayValues.get(i+1), 0));
         }
-        MainActivity.print_way = true;
+        MainActivity.printWay = true;
     }
 
     public void run() throws IOException {
